@@ -18,6 +18,7 @@ class PyEmoji(object):
     def repl_func(self, matched):
         #: .decode('utf8') for Python 3.x compatibility
         hex_num = '0x{0}'.format(matched.group().encode('unicode_escape').decode('utf8').lstrip('\\').lstrip('U').lstrip('0').lstrip('u'))
+        hex_num = hex_num.replace('0xu', '0x')
         decimal_num = int(hex_num, 16)
         return '&#{0};'.format(decimal_num)
 
