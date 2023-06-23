@@ -12,7 +12,7 @@ class PyEmoji(object):
         if unic:
             return unic(text)
         if isinstance(text, str):
-            return text
+            return text.replace('0xu', '0x')
         return text.decode('utf8')
 
     def repl_func(self, matched):
@@ -30,7 +30,6 @@ class PyEmoji(object):
         :param unic:
         :return:
         """
-        print(self.unic_func(emoji, unic))
         return self.unic_func(emoji, unic).encode('unicode_escape')
 
     def decode(self, text):
