@@ -30,7 +30,7 @@ class PyEmoji(object):
         :param unic:
         :return:
         """
-        return self.unic_func(emoji, unic).encode('unicode_escape')
+        return self.unic_func(emoji, unic) #.encode('unicode_escape')
 
     def decode(self, text):
         """
